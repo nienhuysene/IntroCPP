@@ -4,9 +4,11 @@
 
 int main()
 {
-    double Epsilon; //Epsilon als infinitesimaler Schritt
+    /*double Epsilon; //Epsilon als infinitesimaler Schritt
     std::cout<<"Epsilon: "<<std::endl;
-    std::cin>>Epsilon;
+    std::cin>> Epsilon;*/
+
+    double Epsilon = 0.00001;
 
     double UntereIntegrationsgrenze;
     std::cout<<"Untere Integrationsgrenze: "<<std::endl;

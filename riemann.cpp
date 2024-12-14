@@ -4,17 +4,32 @@
 
 int main()
 {
-    float x=0;
-    float f = pow(x,2)+10;
+    double Epsilon; //Epsilon als infinitesimaler Schritt
+    std::cout<<"Epsilon: "<<std::endl;
+    std::cin>>Epsilon;
 
-    //Untersumme
-    for(x = 0;x<=8;)
+    double UntereIntegrationsgrenze;
+    std::cout<<"Untere Integrationsgrenze: "<<std::endl;
+    std::cin>>UntereIntegrationsgrenze;
+
+    double ObereIntegrationsgrenze;
+    std::cout<<"Obere Integrationsgrenze: "<<std::endl;
+    std::cin>>ObereIntegrationsgrenze;
+
+    std::vector <double> Rechtecke; //Vektor mit Flächeninhalten der Rechtecke unter dem Graphen
+
+    for(double x = UntereIntegrationsgrenze;x<=ObereIntegrationsgrenze;x+=Epsilon)
     {
-        
+        double f = pow(x,2)+10;     //Zu integrierende Funktion f
+        Rechtecke.push_back(Epsilon*f);
     }
-    //Obersumme
 
-    //Wert des Integrals
-
-
+    double Gesamt;
+    for(int i = 0; i <= Rechtecke.size(); i++)
+    {
+        Gesamt += Rechtecke[i];
+    }
+    std::cout<<Gesamt<<std::endl;
 }
+
+//To-do: Berechnung des Integrals für negative Funktionswerte ermöglichen

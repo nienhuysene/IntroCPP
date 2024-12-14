@@ -20,8 +20,15 @@ int main()
 
     for(double x = UntereIntegrationsgrenze;x<=ObereIntegrationsgrenze;x+=Epsilon)
     {
-        double f = pow(x,2)+10;     //Zu integrierende Funktion f
-        Rechtecke.push_back(Epsilon*f);
+        double f = -pow(x,2)+10;     //Zu integrierende Funktion f
+        if(f<0)
+        {
+            Rechtecke.push_back(Epsilon*f*(-1));
+        }
+        else
+        {
+            Rechtecke.push_back(Epsilon*f);
+        }
     }
 
     double Gesamt;
@@ -31,5 +38,3 @@ int main()
     }
     std::cout<<Gesamt<<std::endl;
 }
-
-//To-do: Berechnung des Integrals für negative Funktionswerte ermöglichen

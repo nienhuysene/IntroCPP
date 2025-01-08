@@ -20,12 +20,12 @@ class Car
         void driveOutside();
         int speed(int maxSpeed);
 };
-
+/*
 void Car::driveOutside()
 {
     std::cout<<"I'm driving outside"<<std::endl;
 }
-
+*/
 int Car::speed(int maxSpeed)
 {
     return maxSpeed;
@@ -47,11 +47,11 @@ int main()
 
     std::cout<<"Speed? ";
     int a;
-    std::cin>>a;
+    std::cin>> a;
     std::cout<<"Speed: "<<Auto1.speed(a)<<std::endl;
 
     Auto1.drive();
-    Auto1.driveOutside();
+   // Auto1.driveOutside();
     
     time_t timestamp;
     time(&timestamp);

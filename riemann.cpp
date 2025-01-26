@@ -4,11 +4,9 @@
 
 int main()
 {
-    /*double Epsilon; //Epsilon als infinitesimaler Schritt
+    double Epsilon; //Epsilon als infinitesimaler Schritt
     std::cout<<"Epsilon: "<<std::endl;
-    std::cin>> Epsilon;*/
-
-    double Epsilon = 0.00001;
+    std::cin>> Epsilon;
 
     double UntereIntegrationsgrenze;
     std::cout<<"Untere Integrationsgrenze: "<<std::endl;
@@ -22,7 +20,7 @@ int main()
 
     for(double x = UntereIntegrationsgrenze;x<=ObereIntegrationsgrenze;x+=Epsilon)
     {
-        double f = -pow(x,2)+10;     //Zu integrierende Funktion f
+        double f = pow(x,2);     //Zu integrierende Funktion f
         if(f<0)
         {
             Rechtecke.push_back(Epsilon*f*(-1));
